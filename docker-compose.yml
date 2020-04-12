@@ -11,6 +11,7 @@ services:
       - ./db_data:/var/lib/postgresql/data/:rw
   web:
     container_name: network_web
+    restart: always
     build: .
     command: bash -c "python manage.py makemigrations && python manage.py migrate
       && python manage.py runserver 0.0.0.0:8000"

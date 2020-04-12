@@ -1,8 +1,6 @@
 Django==2.2
 djangorestframework==3.11.0
-django-rest-auth[with_social]==0.9.5
+django-rest-auth==0.9.5
+django-allauth==0.41.0
 djangorestframework-jwt==1.11.0
-# djoser
-# social-auth-app-django
-
 psycopg2==2.8.5
