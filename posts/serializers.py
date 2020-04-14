@@ -1,5 +1,3 @@
-from abc import ABC
-
 from rest_framework import serializers
 from .models import Post, Like
 from django.contrib.auth.models import User
@@ -35,11 +33,10 @@ class LikeSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = AuthorSerializer()
 
     class Meta:
         model = Post
-        fields = ('id', 'title', 'body', 'author', 'created', )
+        fields = '__all__'
         read_only_fields = ('author', 'created',)
 
     def validate(self, data):
@@ -53,3 +50,12 @@ class AnalyticSerializer(serializers.Serializer):
     date = serializers.DateField()
     liked = serializers.IntegerField()
     disliked = serializers.IntegerField()
+
+    def create(self):
+        pass
+
+    def validate(self, attrs):
+        pass
+
+    def update(self, instance, validated_data):
+        pass

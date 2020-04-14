@@ -9,7 +9,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.created)
+        return str(self.title)
 
 
 class Like(models.Model):
@@ -17,6 +17,3 @@ class Like(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     like = models.BooleanField()
     created = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.created)
